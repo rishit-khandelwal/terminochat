@@ -22,7 +22,7 @@ def handle(client):
             broadcast(msg)
         except:
             index=clients.index(client)
-            client.remove(client)
+            clients.remove(client)
             client.close()
             nickname=nicknames[index]
             broadcast(f"{nickname} left the chat".encode(ascii))
