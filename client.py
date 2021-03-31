@@ -4,7 +4,7 @@ import threading
 nickname=input("Choose a nickname: ")
 
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(("172.18.0.1",40280))
+client.connect(("127.0.0.1",6969))
 
 def receive():
     while True:
