@@ -15,8 +15,11 @@ def main(stdscr):
         if char == 'KEY_BACKSPACE':
             x -= 1
             continue
-        elif ord(char) in range(65,92) or ord(char) in range(97,123):      
-            stdscr.addch(height-1,x,char)
+        elif char[:3] != "KEY":
+            if ord(char) == 27:
+                return
+            elif ord(char) in range(65,92) or ord(char) in range(97,123):      
+                stdscr.addch(height-1,x,char)
         x += 1
 
         #x += len(f"{ord(char)}")
